@@ -1,9 +1,9 @@
     <nav class="sidebar sidebar-bunker sidebar-sticky">
         <div class="sidebar-header">
             <a href="{{ route('home') }}" class="sidebar-brand">
-                <img class="sidebar-logo-lg"
+                {{-- <img class="sidebar-logo-lg"
                     src="{{ setting('site.logo_light', admin_asset('img/logo-light.png'), true) }}">
-                <img class="sidebar-logo-sm" src="{{ setting('site.favicon', admin_asset('img/favicon.png'), true) }}">
+                <img class="sidebar-logo-sm" src="{{ setting('site.favicon', admin_asset('img/favicon.png'), true) }}"> --}}
             </a>
         </div>
 
@@ -25,10 +25,6 @@
         <div class="sidebar-body">
             <nav class="sidebar-nav">
                 <ul class="metismenu">
-                    <x-admin.nav-link href="{{ route('admin.dashboard') }}">
-                        <i class="typcn typcn-home-outline"></i>
-                        {{ localize('Dashboard') }}
-                    </x-admin.nav-link>
 
                     <!-- User Interface -->
                     @if (module_active('user') && can('user_management'))
@@ -44,38 +40,11 @@
                             </x-admin.nav-link>
                         </x-admin.multi-nav>
                     @endif
-                    <!-- Role-Permission Management -->
-                    @if (can('permission_management') || can('role_management'))
-                        <x-admin.multi-nav>
-                            <x-slot name="title">
-                                <i class="typcn typcn-lock-closed-outline"></i> {{ localize('Role - Permission') }}
-                            </x-slot>
-                            @if (module_active('permission') && can('permission_management'))
-                                <x-admin.nav-link href="{{ route('admin.permission.index') }}">
-                                    {{ localize('Permission') }}
-                                </x-admin.nav-link>
-                            @endif
+                    <x-admin.nav-link href="{{ route('admin.task.index') }}">
+                        <i class="typcn typcn-edit"></i>
+                        {{ localize('Task Management') }}
+                    </x-admin.nav-link>
 
-                            @if (module_active('role') && can('role_management'))
-                                <x-admin.nav-link href="{{ route('admin.role.index') }}">
-                                    {{ localize('Role') }}
-                                </x-admin.nav-link>
-                            @endif
-                        </x-admin.multi-nav>
-                    @endif
-                    {{-- Backup Management --}}
-                    @if (module_active('backup') && can('backup_management'))
-                        <x-admin.nav-link href="{{ route('admin.backup.index') }}">
-                            <i class="typcn typcn-cloud-storage-outline"></i>
-                            {{ localize('Backup') }}
-                        </x-admin.nav-link>
-                    @endif
-                    <!-- Setting Management -->
-                    @if (module_active('setting') && can('setting_management'))
-                        <x-admin.nav-link href="{{ route('admin.setting.index') }}">
-                            <i class="typcn typcn-cog-outline"></i> {{ localize('Setting') }}
-                        </x-admin.nav-link>
-                    @endif
                 </ul>
             </nav>
             <div class="mt-auto p-3 sidebar-logout">

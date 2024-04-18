@@ -9,5 +9,6 @@
     "User": true,
     "Customer": true,
     "Subscription": true,
-    "Marketing": true
+    "Marketing": true,
+    "TaskManagement": true
 }

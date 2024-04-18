@@ -8,9 +8,9 @@
                 </div>
             </div>
             <div class="col-md-6 text-end">
-                <div class="credit">@localize('Designed_and_Developed_by'): <a class="text-black text-capitalize"
+                {{-- <div class="credit">@localize('Designed_and_Developed_by'): <a class="text-black text-capitalize"
                         href="https://www.bdtask.com/" target="_blank">{{ localize('Bdtask') }}<a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

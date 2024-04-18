@@ -28,11 +28,13 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('dashboard');
+        return redirect()->route('admin.task.index');
+
+        // return view('dashboard');
     }
 
     public function redirectToDashboard()
     {
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.task.index');
     }
 }

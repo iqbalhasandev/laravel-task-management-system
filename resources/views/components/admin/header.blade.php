@@ -3,11 +3,6 @@
         sidebar toggle<span></span>
     </div>
     <!--/.sidebar toggle icon-->
-    <div class="d-none" id="typed-strings">
-        {!! setting('site.header_tagline') !!}
-    </div>
-    <p class="mb-0 text-white d-none d-lg-block" id="typed"></p>
-
     <div class="navbar-icon d-flex">
         <ul class="navbar-nav flex-row align-items-center">
             <li class="nav-item dropdown language-menu notification">
@@ -29,7 +24,8 @@
             </li>
             <!--/.dropdown-->
             <li class="nav-item dropdown notification user-header-menu">
-                <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     <img class="img-fluid" src="{{ auth()->user()->profile_photo_url }}">
                 </a>
                 <div class="dropdown-menu">
