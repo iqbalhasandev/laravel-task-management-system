@@ -1,0 +1,13 @@
+{
+    "Auth": true,
+    "Backup": true,
+    "Chat": true,
+    "Language": true,
+    "Permission": true,
+    "Role": true,
+    "Setting": true,
+    "User": true,
+    "Customer": true,
+    "Subscription": true,
+    "Marketing": true
+}
