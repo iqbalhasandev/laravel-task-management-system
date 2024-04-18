@@ -29,12 +29,12 @@ class TaskDataTable extends DataTable
 
                 return $button;
             })
-            ->editColumn('is_active', function ($query) {
+            ->editColumn('is_completed', function ($query) {
                 return $query->is_completed == 1 ? '<span class="badge bg-success">Completed</span>' : '<span class="badge bg-danger">pending</span>';
             })
             ->setRowId('id')
             ->addIndexColumn()
-            ->rawColumns(['is_active', 'action']);
+            ->rawColumns(['is_completed', 'action']);
     }
 
     /**
@@ -77,8 +77,7 @@ class TaskDataTable extends DataTable
         return [
             Column::make('DT_RowIndex')->title(localize('SI'))->searchable(false)->orderable(false)->width(30)->addClass('text-center'),
             Column::make('title')->title(localize('Title'))->defaultContent('N/A'),
-            Column::make('is_active')->title(localize('status')),
-            Column::make('updated_at')->title(localize('Updated'))->defaultContent('N/A'),
+            Column::make('is_completed')->title(localize('status'))->Column::make('updated_at')->title(localize('Updated'))->defaultContent('N/A'),
             Column::computed('action')
                 ->title(localize('Action'))
                 ->searchable(false)
