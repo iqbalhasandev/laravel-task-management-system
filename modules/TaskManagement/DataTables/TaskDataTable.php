@@ -77,7 +77,8 @@ class TaskDataTable extends DataTable
         return [
             Column::make('DT_RowIndex')->title(localize('SI'))->searchable(false)->orderable(false)->width(30)->addClass('text-center'),
             Column::make('title')->title(localize('Title'))->defaultContent('N/A'),
-            Column::make('is_completed')->title(localize('status'))->Column::make('updated_at')->title(localize('Updated'))->defaultContent('N/A'),
+            Column::make('is_completed')->title(localize('status')),
+            Column::make('updated_at')->title(localize('Updated'))->defaultContent('N/A'),
             Column::computed('action')
                 ->title(localize('Action'))
                 ->searchable(false)
