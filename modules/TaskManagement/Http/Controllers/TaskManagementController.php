@@ -101,7 +101,7 @@ class TaskManagementController extends Controller
      */
     public function edit(Task $task)
     {
-        return view('taskmanagement::create_edit', ['item' => $category])->render();
+        return view('taskmanagement::create_edit', ['item' => $task])->render();
     }
 
     /**
@@ -109,16 +109,16 @@ class TaskManagementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Task $category, Request $request)
+    public function update(Task $task, Request $request)
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'is_completed' => 'required|boolean',
         ]);
-        $category->update($data);
+        $task->update($data);
 
-        return response()->success($category, 'Task Updated Successfully.', 200);
+        return response()->success($task, 'Task Updated Successfully.', 200);
     }
 
     /**
@@ -126,9 +126,9 @@ class TaskManagementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $category)
+    public function destroy(Task $task)
     {
-        $category->delete();
+        $task->delete();
         return response()->success(null, 'Task Deleted Successfully.', 200);
     }
 }
